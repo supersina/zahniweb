@@ -6,15 +6,23 @@ export const ButtonLink = ({ title, link, ...props }) => {
   return (
     <>
       <Button
-        colorScheme="blue"
         variant="solid"
+        bg="rgba(69,139,116)"
+        color="white"
+        //borderColor="rgb(150,200,150)"
+        _hover={{ bg: 'rgba(150,200,150)' }}
+        _focus={{
+          boxShadow:
+            '0 0 1px 2px rgba(150,200,150), 0 1px 1px rgba(150,200,150, .15)',
+        }}
         size="lg"
-        maxW="200px"
+        maxW="20rem"
+        padding="1.5rem"
         {...props}
         //bottom="20px"
         //position="absolute"
       >
-        <Link href={link} as="h2">
+        <Link href={link} style={{ textDecoration: 'none' }}>
           <Text>{title}</Text>
         </Link>
       </Button>

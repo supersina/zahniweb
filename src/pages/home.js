@@ -53,12 +53,12 @@ export const HomePage = () => {
               <ButtonLink
                 title={'Online Termin'}
                 link={'https://doctolib.de'}
-                margin={2}
+                margin={1}
               ></ButtonLink>
               <ButtonLink
                 title={'Kontakt'}
                 link={'/kontakt'}
-                margin={2}
+                margin={1}
               ></ButtonLink>
             </Flex>
           </Flex>
@@ -75,7 +75,7 @@ export const HomePage = () => {
       <ContentContainer>
         <Article data={praxisInfo}></Article>
         <Box mt={10}>
-          <Heading as="h2" variant="medium" width="fit-content" padding={2}>
+          <Heading as="h2" variant="large" width="fit-content" padding={2}>
             Unsere Leistungen
           </Heading>
           <Text>

@@ -19,15 +19,9 @@ export const Sprechzeiten = ({ ...props }) => {
             mb={5}
             {...props}
           >
-            <Text variant="xsmall" m={1}>
-              Mo-Mi
-            </Text>
-            <Text variant="xsmall" m={1}>
-              Do-Fr
-            </Text>
-            <Text variant="xsmall" m={1}>
-              Sa-So
-            </Text>
+            <Text variant="xsmall">Mo-Mi</Text>
+            <Text variant="xsmall">Do-Fr</Text>
+            <Text variant="xsmall">Sa-So</Text>
           </Flex>
           <Flex
             direction="column"
@@ -39,15 +33,9 @@ export const Sprechzeiten = ({ ...props }) => {
             mb={5}
             {...props}
           >
-            <Text variant="xsmall" m={1}>
-              9:00 - 15:00 Uhr
-            </Text>
-            <Text variant="xsmall" m={1}>
-              9:00 - 15:00 Uhr
-            </Text>
-            <Text variant="xsmall" m={1}>
-              geschlossen
-            </Text>
+            <Text variant="xsmall">9:00 - 15:00 Uhr</Text>
+            <Text variant="xsmall">9:00 - 15:00 Uhr</Text>
+            <Text variant="xsmall">geschlossen</Text>
           </Flex>
         </Flex>
       </Box>

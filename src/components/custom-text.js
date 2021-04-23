@@ -1,11 +1,11 @@
 export const CustomText = {
   baseStyle: {
     fontWeight: 'normal',
-    fontSize: { sm: 'md', md: 'lg', lg: 'xl', xl: '2xl' },
+    fontSize: ['0.8rem', '0.9rem', '1rem', '1.1rem', '1.2rem'],
   },
   variants: {
     xsmall: {
-      fontSize: { xs: 'sm', sm: 'md', md: 'md', lg: 'lg', xl: 'xl' },
+      fontSize: ['0.7rem', '0.8rem', '0.9rem', '1rem', '1rem'],
     },
   },
 };

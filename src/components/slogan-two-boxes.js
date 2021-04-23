@@ -5,7 +5,9 @@ export const SloganTwoBoxes = ({ text1, text2, ...props }) => {
   return (
     <Box position="absolute" align="right" top="60vh" right="10vw" {...props}>
       <Box
-        bg={`linear-gradient(rgba(69,139,116,0.7), rgba(69,139,116,0.7))`}
+        //bg={`linear-gradient(rgba(69,139,116,0.7), rgba(69,139,116,0.7))`}
+        bg="rgba(69,139,116)"
+        color="white"
         height="fit-content"
         width="fit-content"
       >
@@ -14,7 +16,8 @@ export const SloganTwoBoxes = ({ text1, text2, ...props }) => {
         </Heading>
       </Box>
       <Box
-        bg={`linear-gradient(rgba(150,200,150,0.7), rgba(150,200,150,0.7))`}
+        bg="rgba(150,200,150)"
+        color="white"
         height="fit-content"
         width="fit-content"
       >

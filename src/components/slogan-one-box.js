@@ -9,6 +9,7 @@ export const SloganOneBox = ({ text1, ...props }) => {
         height="fit-content"
         width="fit-content"
         mt="420px"
+        color="white"
       >
         <Heading as="h1" variant="xlarge" p="10px" ml="50px" mr="50px">
           {text1}

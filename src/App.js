@@ -13,7 +13,7 @@ function App() {
     if (window.location.pathname === '/leistungen') {
       return <LeistungenPage />;
     }
-    if (window.location.pathname === '/team') {
+    if (window.location.pathname === '/praxis') {
       return <TeamPage />;
     }
     if (window.location.pathname === '/kontakt') {

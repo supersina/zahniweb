@@ -17,7 +17,7 @@ export const TeamPage = () => {
       <ContentContainer>
         {/* Team members infos. Fortbildungen are added to standard infos (title and description) of article.*/}
         <Article data={data}>
-          <Heading as="h4" variant="small" mt={4} mb={2}>
+          <Heading as="h4" variant="medium" mt={4} mb={2}>
             Fortbildungen:
           </Heading>
           <UnorderedList>

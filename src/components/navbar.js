@@ -24,7 +24,7 @@ export const Navbar = () => {
         position="absolute"
         top="0"
         h={navbarHeight}
-        bg={`linear-gradient(rgba(300,300,300,0.3),rgba(300,300,300,0.3))`}
+        bg={`linear-gradient(rgba(150,200,150,0.9),rgba(150,200,150,0.2))`}
       >
         <Box>
           <Image
@@ -38,23 +38,23 @@ export const Navbar = () => {
         </Box>
         <Flex direction="row" justify-content="flex-end" mr={10}>
           <List>
-            <ListItem display="inline-block" margin="0 20px">
-              <Heading as="h2" variant="small">
+            <ListItem display="inline-block" margin="0 1rem">
+              <Heading as="p" variant="small">
                 <Link href="/home">Home</Link>
               </Heading>
             </ListItem>
-            <ListItem display="inline-block" margin="0 20px">
-              <Heading as="h2" variant="small">
-                <Link href="/team">Unser Team</Link>
+            <ListItem display="inline-block" margin="0 1rem">
+              <Heading as="p" variant="small">
+                <Link href="/praxis">Unsere Praxis</Link>
               </Heading>
             </ListItem>
-            <ListItem display="inline-block" margin="0 20px">
-              <Heading as="h2" variant="small">
+            <ListItem display="inline-block" margin="0 1rem">
+              <Heading as="p" variant="small">
                 <Link href="/leistungen">Unsere Leistungen</Link>
               </Heading>
             </ListItem>
-            <ListItem display="inline-block" margin="0 20px">
-              <Heading as="h2" variant="small">
+            <ListItem display="inline-block" margin="0 1rem">
+              <Heading as="p" variant="small">
                 <Link href="/kontakt">Kontakt</Link>
               </Heading>
             </ListItem>

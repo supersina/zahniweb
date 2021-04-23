@@ -35,10 +35,10 @@ export const ItemCarousel = () => {
                   backgroundRepeat="no-repeat"
                   backgroundSize="cover"
                 ></Box>
-                <Heading as="h4" variant="xsmall" m={2} ml={4}>
+                <Heading as="h4" variant="small" m={2} ml={4}>
                   {leistung.title}
                 </Heading>
-                <Text m={2} ml={4} noOfLines={3} fontSize={{ lg: 'md' }}>
+                <Text m={2} ml={4} noOfLines={3} variant="xsmall">
                   {leistung.description}
                 </Text>
               </Box>

@@ -5,11 +5,11 @@ import { CustomText } from '../components/custom-text';
 import { CustomHeading } from '../components/custom-heading';
 
 const breakpoints = createBreakpoints({
-  xs: '0',
-  sm: '320px',
-  md: '768px',
-  lg: '960px',
-  xl: '1200px',
+  xs: '20rem',
+  sm: '48rem',
+  md: '60rem',
+  lg: '75rem',
+  xl: '90rem',
 });
 
 const overrides = {

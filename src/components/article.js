@@ -1,37 +1,61 @@
 import React from 'react';
 import { Box, Flex, Heading, Image, Text } from '@chakra-ui/react';
 
-export const Article = ({ data, children }) => {
+export const Article = ({ data, children, ...props }) => {
   return (
     <>
       {data.map((entry, index) => {
         const isRowReverse = index % 2 !== 0;
         return (
-          <Flex
-            direction={isRowReverse ? 'row-reverse' : 'row'}
-            justify="center"
-            wrap="wrap"
-            key={entry.index}
-          >
-            <Box p={{ base: '8', sm: '4', md: '6', lg: '8' }} boxSize="50%">
-              <Image
-                boxSize="100%"
-                objectFit="cover"
-                src={entry.image}
-                alt={entry.name}
-              ></Image>
-            </Box>
-            <Box boxSize="50%" p={8}>
-              <Box>
-                <Heading as="h2" variant="medium">
-                  {entry.title}
-                </Heading>
-
-                <Text>{entry.introduction}</Text>
+          <Box marginBottom="2rem">
+            <Heading as="h2" variant="large">
+              {entry.title}
+            </Heading>
+            <Flex
+              //direction={isRowReverse ? 'row-reverse' : 'row'}
+              direction="row"
+              justify="center"
+              wrap="wrap"
+              key={index}
+              {...props}
+            >
+              <Box
+                width={{
+                  xs: '100%',
+                  sm: '100%',
+                  md: '40%',
+                  lg: '40%',
+                  xl: '40%',
+                }}
+                p={{ base: '2', sm: '2', md: '4', lg: '6' }}
+              >
+                <Image
+                  boxSize="50vw"
+                  maxHeight="400px"
+                  objectFit="cover"
+                  src={entry.image}
+                  alt={entry.name}
+                  margin="auto"
+                ></Image>
               </Box>
-              {children}
-            </Box>
-          </Flex>
+              <Box
+                width={{
+                  xs: '100%',
+                  sm: '100%',
+                  md: '60%',
+                  lg: '60%',
+                  xl: '60%',
+                }}
+                p={{ base: '2', sm: '2', md: '4', lg: '6' }}
+              >
+                <Box>
+                  <Text>{entry.introduction}</Text>
+                </Box>
+              </Box>
+            </Flex>
+
+            {children}
+          </Box>
         );
       })}
     </>
