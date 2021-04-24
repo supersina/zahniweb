@@ -5,10 +5,15 @@ export const Article = ({ data, children, ...props }) => {
   return (
     <>
       {data.map((entry, index) => {
-        const isRowReverse = index % 2 !== 0;
+        //const isRowReverse = index % 2 !== 0;
         return (
-          <Box marginBottom="2rem">
-            <Heading as="h2" variant="large">
+          <Box marginBottom="2rem" key={index}>
+            <Heading
+              as="h2"
+              variant="large"
+              //bg="rgba(69,139,116)"
+              padding="4px"
+            >
               {entry.title}
             </Heading>
             <Flex
@@ -16,7 +21,6 @@ export const Article = ({ data, children, ...props }) => {
               direction="row"
               justify="center"
               wrap="wrap"
-              key={index}
               {...props}
             >
               <Box
@@ -49,7 +53,7 @@ export const Article = ({ data, children, ...props }) => {
                 p={{ base: '2', sm: '2', md: '4', lg: '6' }}
               >
                 <Box>
-                  <Text>{entry.introduction}</Text>
+                  <Text>{entry.text}</Text>
                 </Box>
               </Box>
             </Flex>

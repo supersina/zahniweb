@@ -24,7 +24,7 @@ export const Navbar = () => {
         position="absolute"
         top="0"
         h={navbarHeight}
-        bg={`linear-gradient(rgba(150,200,150,0.9),rgba(150,200,150,0.2))`}
+        bg={`linear-gradient(rgba(200,200,200,0.9),rgba(200, 200, 200,0.2))`}
       >
         <Box>
           <Image

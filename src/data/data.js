@@ -4,8 +4,8 @@ export const teamDr = [
     name: 'Roxi',
     title: 'Dr. Roxi',
     image: 'images/team/roxi.jpg',
-    introduction:
-      'Roxi ist hier die Chefin. Sie ist eine geübte Ärztin, die sich für Ihre Patient*Innen ins Zeug legt. Lorem ipsum dolor siicia labor dicta autem, beatae quod, dignissimos expedita omnis nobis ab ullam repudiandae iure! Animi recusandae enim aspernatur iste expedita, consectetur, assumenda est, esse aut provident unde',
+    text:
+      'Roxi ist hier die Chefin. Sie ist eine geübte Ärztin, die sich für Ihre Patient*Innen ins Zeug legt. Lorem ipsum dolor siicia labor dicta autem, beatae quod, dignissimos expedita omnis nobis ab ullam repudiandae iure! Animi recusandae enim aspernatur iste expedita, consectetur, assumenda est, esse aut provident unde oxi ist hier die Chefin. Sie ist eine geübte Ärztin, oxi ist hier die Chefin. Sie ist eine geübte Ärztin, oxi ist hier die Chefin. Sie ist eine geübte Ärztin, oxi ist hier die Chefin. Sie ist eine geübte Ärztin, oxi ist hier die Chefin. Sie ist eine geübte Ärztin, oxi ist hier die Chefin. Sie ist eine geübte Ärztin, oxi ist hier die Chefin. Sie ist eine geübte Ärztin, ',
     schwerpunkte: [
       {
         id: 1,
@@ -63,8 +63,8 @@ export const teamDr = [
     name: 'X',
     title: 'Dr. X',
     image: 'images/team/x.jpg',
-    introduction:
-      'X ist seit 10 Jahren Zahnärztin. Sie widmet sich besonders gerne den ganz alten und jungen Patient*Innen. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eos ab, harum qui voluptas nemo officia laboriosam iste consequuntur amet iure deleniti. Iusto doloremque accusamus dicta autem, beatae quod, dignissimos expedita omnis nobis ab ullam repudiandae iure! Animi recusandae enim aspernatur iste expedita, ',
+    text:
+      'X ist seit 10 Jahren Zahnärztin. Sie widmet sich besonders gerne den ganz alten und jungen Patient*Innen. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eos ab, harum qui voluptas nemo officia laboriosam iste consequuntur amet iure deleniti. Iusto doloremque accusamus dicta autem, beatae quod, dignissimos expedita omnis nobis ab ullam repudiandae iure! Animi recusandae enim aspernatur iste expedita, oxi ist hier die Chefin. Sie ist eine geübte Ärztin, oxi ist hier die Chefin. Sie ist eine geübte Ärztin, oxi ist hier die Chefin. Sie ist eine geübte Ärztin, ',
     schwerpunkte: [
       {
         id: 1,
