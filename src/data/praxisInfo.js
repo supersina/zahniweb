@@ -1,11 +1,15 @@
 //praxisInfo
 export const praxisInfo = {
-  id: 1,
-  name: 'Roxi',
-  title: 'Unsere Praxis',
-  image: 'images/team/roxi.jpg',
-  text:
-    'Gelegen in einer ruhigen Seitenstraße der schönsten Stadt der Welt erstreckt sich unsere moderne Praxis über 150 qm. Unser eingespieltes Empfangsteam begrüßt Sie und sorgt für schnelle und reibungslose Abläufe. Ihre Behandlung findet in einem von zwei Räumen statt. Dr. Roxi und Dr. X arbeiten mit neusten Equipment auf dem neuesten Stand der Technik. Damit sind Sie bei uns immer bestens versorgt.',
+  basics: [
+    {
+      id: 1,
+      name: 'Praxis',
+      title: 'Unsere Praxis',
+      image: 'images/team/roxi.jpg',
+      text:
+        'Gelegen in einer ruhigen Seitenstraße der schönsten Stadt der Welt erstreckt sich unsere moderne Praxis über 150 qm. Unser eingespieltes Empfangsteam begrüßt Sie und sorgt für schnelle und reibungslose Abläufe. Ihre Behandlung findet in einem von zwei Räumen statt. Dr. Roxi und Dr. X arbeiten mit neusten Equipment auf dem neuesten Stand der Technik. Damit sind Sie bei uns immer bestens versorgt.',
+    },
+  ],
   description: [
     {
       id: 1,
@@ -30,6 +34,7 @@ export const praxisInfo = {
   ],
   cooperation: [
     {
+      title: 'Unser Kooperationspartner',
       image: 'images/team/x.jpg',
       text:
         'Um Ihnen besten Service zu bieten, arbeiten wir mit dem Dentallabor DentaSchick zusammen. Es liegt gegenüber unserer Praxis und wird geführt von Herrn Müller. Herr Müller und sein Team sind bekannt für Ihre Qualitätsarbeit. Ihr Zahnersatz ist ein Unikat, das perfekt zu Ihnen passen muss. Hier wird es in Handarbeit mit größter Hingabe gefertigt.',

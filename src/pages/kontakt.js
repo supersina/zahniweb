@@ -5,6 +5,7 @@ import { ContactForm } from '../components/contact-form';
 import { ContactDetails } from '../components/contact-details';
 import { HeroImage } from '../components/hero-image';
 import { ContentContainer } from '../components/content-container';
+import { ContentContainerLarge } from '../components/content-container-large';
 
 export const KontaktPage = () => {
   return (
@@ -14,8 +15,10 @@ export const KontaktPage = () => {
       </HeroImage>
       <ContentContainer>
         <ContactForm />
-        <ContactDetails />
       </ContentContainer>
+      <ContentContainerLarge>
+        <ContactDetails />
+      </ContentContainerLarge>
     </>
   );
 };

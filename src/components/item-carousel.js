@@ -1,7 +1,10 @@
 import React from 'react';
 import Carousel from 'react-elastic-carousel';
-import { Box, Flex, Button, Heading, Link, Text } from '@chakra-ui/react';
-import { leistungen } from '../data/data';
+import { Box, Flex, Heading, Text } from '@chakra-ui/react';
+import { leistungen } from '../data/leistungenInfo';
+
+import { colors } from '../theme/colors';
+import { ButtonLink } from './buttonLink';
 
 const breakPoints = [
   { width: 1, itemsToShow: 1, itemsToScroll: 1 },
@@ -21,9 +24,9 @@ export const ItemCarousel = () => {
               direction="column"
               justifyContent="space-around"
               align-items="center"
-              bg="rgb(150,200,150)"
+              bg={colors.secColor}
               w="100%"
-              h="250px"
+              h="16rem" //"250px"
               m={15}
               key={leistung.id}
             >
@@ -35,19 +38,27 @@ export const ItemCarousel = () => {
                   backgroundRepeat="no-repeat"
                   backgroundSize="cover"
                 ></Box>
-                <Heading as="h4" variant="small" m={2} ml={4}>
+                <Heading
+                  as="h4"
+                  variant="small"
+                  m="0.5rem"
+                  ml="1rem"
+                  color={colors.buttonColor}
+                >
                   {leistung.title}
                 </Heading>
-                <Text m={2} ml={4} noOfLines={3} variant="xsmall">
+                <Text
+                  m={2}
+                  ml="1rem"
+                  noOfLines={3}
+                  variant="xsmall"
+                  color="white"
+                >
                   {leistung.description}
                 </Text>
               </Box>
               <Box textAlign="center">
-                <Button colorScheme="blue" variant="solid" size="sm" m={2}>
-                  <Link href="" as="h2">
-                    <Text>mehr </Text>
-                  </Link>
-                </Button>
+                <ButtonLink size="xs" title="mehr"></ButtonLink>
               </Box>
             </Flex>
           );

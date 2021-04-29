@@ -1,15 +1,17 @@
 import React from 'react';
 import { Box, Image, Grid, GridItem } from '@chakra-ui/react';
+import { colors } from '../theme/colors';
 
 export const GridImg = ({ data, ...props }) => {
   return (
     <>
-      <Box p="2rem" background="rgb(150,200,150)">
+      <Box>
         <Grid
-          h="400px"
           templateRows="repeat(2, 1fr)"
           templateColumns="repeat(6, 1fr)"
-          gap={4}
+          gap="0.8rem"
+          background={colors.secColor}
+          padding="0.8rem"
           {...props}
         >
           <GridItem rowSpan={1} colSpan={2} bg="rgb(69,139,116)">

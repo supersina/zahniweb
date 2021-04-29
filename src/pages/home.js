@@ -11,6 +11,7 @@ import { HeroImage } from '../components/hero-image';
 import { ContentContainer } from '../components/content-container';
 import { praxisInfo } from '../data/praxisInfo';
 import { Article } from '../components/article';
+import { colors } from '../theme/colors';
 //import { Text } from '../components/custom-text';
 
 export const HomePage = () => {
@@ -26,40 +27,40 @@ export const HomePage = () => {
 
       {/* Introduction */}
       <ContentContainer>
-        <Flex direction="column" wrap="column" justify="center" mb={10}>
-          <Heading as="h1" variant="large" mt={10}>
+        <Flex direction="column" justify="center" mb={10}>
+          <Heading as="h1" variant="large">
             Herzlich Willkommen in der Praxis Nowak!
           </Heading>
-          <Text mt={4}>
+          <Text>
             In einer modernen Berliner Praxis sorgt unser Team aus zwei
             Zahnärztinnen und drei Arzthelferinnen für die Gesundheit Ihrer
             Zähne. Wir sind bestens ausgebildet und bilden uns regelmäßig fort,
             um Sie auf dem neuesten Stand der Wissenschaft behandeln zu können.
             Damit sind Sie und Ihre Zähne bei uns bestens aufgehoben.
           </Text>
-          <Text mt={4}>
+          <Text marginTop="0.5rem">
             Kontaktieren Sie uns oder vereinbaren Sie direkt einen Termin.
           </Text>
           <Flex
-            flex-flow="row wrap"
-            align="center"
-            justify="space-evenly"
+            //flex-flow="row wrap"
+            //align="center"
+            //justify="space-evenly"
+            direction="row"
+            justify="space-around"
             wrap="wrap"
-            mt={10}
-            bg="gray.100"
+            align="center"
+            mt="2rem"
+            pr="2rem"
+            pl="2rem"
+            bg={colors.secColor}
           >
-            <Sprechzeiten></Sprechzeiten>
+            <Sprechzeiten color="white"></Sprechzeiten>
             <Flex direction="column">
               <ButtonLink
                 title={'Online Termin'}
                 link={'https://doctolib.de'}
-                margin={1}
               ></ButtonLink>
-              <ButtonLink
-                title={'Kontakt'}
-                link={'/kontakt'}
-                margin={1}
-              ></ButtonLink>
+              <ButtonLink title={'Kontakt'} link={'/kontakt'}></ButtonLink>
             </Flex>
           </Flex>
         </Flex>
@@ -73,9 +74,9 @@ export const HomePage = () => {
       {/* Leistungen */}
 
       <ContentContainer>
-        <Article data={praxisInfo}></Article>
+        <Article data={praxisInfo.basics}></Article>
         <Box mt={10}>
-          <Heading as="h2" variant="large" width="fit-content" padding={2}>
+          <Heading as="h2" variant="large" width="fit-content">
             Unsere Leistungen
           </Heading>
           <Text>

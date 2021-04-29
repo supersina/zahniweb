@@ -4,19 +4,19 @@ import { Box, Flex, Heading, Text } from '@chakra-ui/react';
 export const Sprechzeiten = ({ ...props }) => {
   return (
     <>
-      <Box ml={15} mr={15}>
-        <Heading as="h4" variant="small" mt={6} mb={3} {...props}>
+      <Box>
+        <Heading as="h4" variant="small" {...props}>
           Sprechzeiten
         </Heading>
-        <Flex direction="row" flex-wrap="wrap" w="300px" bg="transparent">
+        <Flex direction="row" flex-wrap="wrap" bg="transparent">
           <Flex
             direction="column"
             flex-flow="column wrap"
-            align="stretch"
+            align="flex-start"
             justify="space-between"
             wrap="wrap"
-            w="300px"
-            mb={5}
+            w="5rem"
+            marginBottom="1rem"
             {...props}
           >
             <Text variant="xsmall">Mo-Mi</Text>
@@ -26,11 +26,11 @@ export const Sprechzeiten = ({ ...props }) => {
           <Flex
             direction="column"
             flex-flow="column wrap"
-            align="stretch"
+            align="flex-start"
             justify="space-between"
             wrap="wrap"
-            w="400px"
-            mb={5}
+            w="7.5rem"
+            marginBottom="1rem"
             {...props}
           >
             <Text variant="xsmall">9:00 - 15:00 Uhr</Text>

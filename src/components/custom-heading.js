@@ -1,7 +1,12 @@
+import { colors } from '../theme/colors';
+
 export const CustomHeading = {
   baseStyle: {
     fontWeight: 'normal',
+    color: colors.headingColor,
     fontSize: ['0.8rem', '0.9rem', '1rem', '1.1rem', '1.2rem'],
+    marginTop: '1.5rem',
+    marginBottom: '0.5rem',
   },
   variants: {
     xsmall: {

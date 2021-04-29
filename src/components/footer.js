@@ -3,6 +3,7 @@ import { Box, Flex, Icon, Image, Text } from '@chakra-ui/react';
 import { IoMdFootball } from 'react-icons/io';
 
 import { Sprechzeiten } from './sprechzeiten-block';
+import { colors } from '../theme/colors';
 
 export const Footer = () => {
   return (
@@ -17,9 +18,9 @@ export const Footer = () => {
         //position="fixed"
         top="0"
         //bg={`linear-gradient(rgba(300,300,300,0.3),rgba(300,300,300,0.3))`}
-        bg="rgb(150,200,150)"
+        bg={colors.mainColor}
       >
-        <Sprechzeiten />
+        <Sprechzeiten color="white" />
         <Box>
           <Image
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0OvkcWyOmd3paozcdWY9aO7dz2ARXs1EuMg&usqp=CAU"
@@ -31,10 +32,16 @@ export const Footer = () => {
           ></Image>
         </Box>
 
-        <Text variant="xsmall">
+        <Text variant="xsmall" color="white">
           ©2021 Praxis Roxi | Designed with{' '}
-          <Icon as={IoMdFootball} w={6} h={6} color="black" mr="4px"></Icon> by
-          Sina
+          <Icon
+            as={IoMdFootball}
+            w={6}
+            h={6}
+            color={colors.buttonColor}
+            mr="4px"
+          ></Icon>{' '}
+          by Sina
         </Text>
       </Flex>
     </>

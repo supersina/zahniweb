@@ -8,6 +8,7 @@ import {
   List,
   ListItem,
 } from '@chakra-ui/react';
+import { colors } from '../theme/colors';
 
 export const navbarHeight = '64px';
 
@@ -24,7 +25,7 @@ export const Navbar = () => {
         position="absolute"
         top="0"
         h={navbarHeight}
-        bg={`linear-gradient(rgba(200,200,200,0.9),rgba(200, 200, 200,0.2))`}
+        bg={`linear-gradient(to bottom, ${colors.mainColorTransp} 00%, ${colors.mainColorTransp} 100%)`}
       >
         <Box>
           <Image
@@ -39,22 +40,22 @@ export const Navbar = () => {
         <Flex direction="row" justify-content="flex-end" mr={10}>
           <List>
             <ListItem display="inline-block" margin="0 1rem">
-              <Heading as="p" variant="small">
+              <Heading as="p" variant="small" color="white">
                 <Link href="/home">Home</Link>
               </Heading>
             </ListItem>
             <ListItem display="inline-block" margin="0 1rem">
-              <Heading as="p" variant="small">
+              <Heading as="p" variant="small" color="white">
                 <Link href="/praxis">Unsere Praxis</Link>
               </Heading>
             </ListItem>
             <ListItem display="inline-block" margin="0 1rem">
-              <Heading as="p" variant="small">
+              <Heading as="p" variant="small" color="white">
                 <Link href="/leistungen">Unsere Leistungen</Link>
               </Heading>
             </ListItem>
             <ListItem display="inline-block" margin="0 1rem">
-              <Heading as="p" variant="small">
+              <Heading as="p" variant="small" color="white">
                 <Link href="/kontakt">Kontakt</Link>
               </Heading>
             </ListItem>

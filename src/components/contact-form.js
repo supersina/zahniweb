@@ -3,7 +3,6 @@ import {
   Heading,
   Text,
   Box,
-  Button,
   Checkbox,
   Input,
   FormControl,
@@ -12,6 +11,8 @@ import {
   Textarea,
 } from '@chakra-ui/react';
 import { AlertConfirmation } from './alert-confirmation';
+import { colors } from '../theme/colors';
+import { ButtonLink } from './buttonLink';
 
 const fontSize = { sm: 'sm', md: 'md', lg: 'md', xl: 'md' };
 
@@ -106,8 +107,8 @@ export const ContactForm = () => {
   console.log('Erroooors: ', errors);
   return (
     <>
-      <Box maxW="500px" margin="auto" mb={4} mt="10">
-        <Heading as="h3" variant="medium" marginX="auto" mb="4">
+      <Box margin="auto" mb={4} mt={10}>
+        <Heading as="h3" variant="medium" marginX="auto">
           Sie möchten Kontakt zu uns aufnehmen?
         </Heading>
         <Text margin="auto">
@@ -117,17 +118,21 @@ export const ContactForm = () => {
       </Box>
 
       <Box
+        width={{ xs: '100%', sm: '100%', md: '90%', lg: '80%', xl: '80%' }}
         maxW="500px"
         //borderWidth="2px"
         //borderColor="rgb(150,200,150)"
         rounded="lg"
-        bg="rgb(150,200,150)"
+        bg={colors.secColor}
+        color="white"
         marginX="auto"
+        marginTop="2rem"
         borderRadius="5px"
       >
         <Flex
+          direction="column"
           flexWrap="wrap"
-          maxW="400px"
+          width="90%"
           alignItems="center"
           justifyContent="center"
           mt={4}
@@ -137,7 +142,7 @@ export const ContactForm = () => {
             <FormLabel fontSize={fontSize}>Name</FormLabel>
             <Input
               type="text"
-              bg="lightgray"
+              bg={colors.bgColor}
               size="sm"
               isInvalid={errors.includes('nameInput')}
               value={nameInput}
@@ -148,7 +153,7 @@ export const ContactForm = () => {
             <FormLabel fontSize={fontSize}>Email</FormLabel>
             <Input
               type="email"
-              bg="lightgray"
+              bg={colors.bgColor}
               size="sm"
               isInvalid={errors.includes('emailInput')}
               value={emailInput}
@@ -159,7 +164,7 @@ export const ContactForm = () => {
             <FormLabel fontSize={fontSize}>Telefon</FormLabel>
             <Input
               type="tel"
-              bg="lightgray"
+              bg={colors.bgColor}
               size="sm"
               isInvalid={errors.includes('telephoneInput')}
               value={telephoneInput}
@@ -172,7 +177,7 @@ export const ContactForm = () => {
             mt={4}
             mb={4}
             size="sm"
-            bg="lightgray"
+            bg={colors.bgColor}
             max={200}
             min={2}
             isInvalid={errors.includes('textInput')}
@@ -189,9 +194,7 @@ export const ContactForm = () => {
             Datenschutz habe ich gelesen und stimme zu
           </Checkbox>
           {sent ? <AlertConfirmation></AlertConfirmation> : <Text></Text>}
-          <Button mb={4} onClick={sendMessage}>
-            Senden
-          </Button>
+          <ButtonLink mb={4} title="Senden" onClick={sendMessage}></ButtonLink>
         </Flex>
       </Box>
     </>
