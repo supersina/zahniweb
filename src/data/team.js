@@ -5,7 +5,7 @@ export const teamDr = [
     title: 'Dr. Roxi',
     image: 'images/team/roxi.jpg',
     text:
-      'Roxi ist hier die Chefin. Sie ist eine geübte Ärztin, die sich für Ihre Patient*Innen ins Zeug legt. Lorem ipsum dolor siicia labor dicta autem, beatae quod, dignissimos expedita omnis nobis ab ullam repudiandae iure! Animi recusandae enim aspernatur iste expedita, consectetur, assumenda est, esse aut provident unde oxi ist hier die Chefin. Sie ist eine geübte Ärztin, oxi ist hier die Chefin. Sie ist eine geübte Ärztin, oxi ist hier die Chefin. Sie ist eine geübte Ärztin, oxi ist hier die Chefin. Sie ist eine geübte Ärztin, oxi ist hier die Chefin. Sie ist eine geübte Ärztin, oxi ist hier die Chefin. Sie ist eine geübte Ärztin, oxi ist hier die Chefin. Sie ist eine geübte Ärztin, ',
+      'Roxi ist hier die Chefin. Sie ist eine geübte Ärztin, die sich für Ihre Patient*Innen ins Zeug legt. Sie hat ganz viel Erfahrung gesammelt und schon hier und dort gearbeitet. Sie ist Mitglied im Deutschen Zahnarztbund und setzt sich für gesunde Zähne für alle ein. ',
     schwerpunkte: [
       {
         id: 1,
@@ -43,18 +43,18 @@ export const teamDr = [
       },
       {
         id: 2,
-        title: 'Professionelles Kiefereinrenken',
-        description: 'Dreijährige Weiterbildung. Kiereinrenken für Profis',
+        title: 'Kronen pflegen',
+        description: 'Zertifizierte Schulung, Institut für Kronen.',
       },
       {
         id: 3,
-        title: 'Professionelles Kiefereinrenken',
-        description: 'Dreijährige Weiterbildung. Kiereinrenken für Profis',
+        title: 'Reingucken ohne Verrenkungen',
+        description: 'Fortbildung für gesunde PatientInnen und ÄrztInnen',
       },
       {
         id: 4,
-        title: 'Professionelles Kiefereinrenken',
-        description: 'Dreijährige Weiterbildung. ',
+        title: 'Professionelles Finden von Karies',
+        description: 'Regelmäßige jährliche Weiterbildung ',
       },
     ],
   },
@@ -64,7 +64,7 @@ export const teamDr = [
     title: 'Dr. X',
     image: 'images/team/x.jpg',
     text:
-      'X ist seit 10 Jahren Zahnärztin. Sie widmet sich besonders gerne den ganz alten und jungen Patient*Innen. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eos ab, harum qui voluptas nemo officia laboriosam iste consequuntur amet iure deleniti. Iusto doloremque accusamus dicta autem, beatae quod, dignissimos expedita omnis nobis ab ullam repudiandae iure! Animi recusandae enim aspernatur iste expedita, oxi ist hier die Chefin. Sie ist eine geübte Ärztin, oxi ist hier die Chefin. Sie ist eine geübte Ärztin, oxi ist hier die Chefin. Sie ist eine geübte Ärztin, ',
+      'X ist seit 10 Jahren Zahnärztin. Sie widmet sich besonders gerne den ganz alten und jungen Patient*Innen. Sie hat schon hier und dort gearbeitet und freut sich, mit Dr. Roxi in einem Team arbeiten zu dürfen. Von Profis lernt man eben am besten. ',
     schwerpunkte: [
       {
         id: 1,
@@ -93,13 +93,13 @@ export const teamDr = [
     fortbildungen: [
       {
         id: 1,
-        title: 'Professionelles Kiefereinrenken',
+        title: 'Professionelles Kiefereinrenken bei Alt und Jung',
         description: 'Dreijährige Weiterbildung. Kiereinrenken für Profis',
       },
       {
         id: 2,
-        title: 'Professionelles Kiefereinrenken',
-        description: 'Dreijährige Weiterbildung. Kiereinrenken für Profis',
+        title: 'Zahnersatz Spezial',
+        description: 'Regelmäßige Fortbildung bzgl. neuer Methoden',
       },
     ],
   },

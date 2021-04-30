@@ -9,27 +9,22 @@ import { praxisInfo } from '../data/praxisInfo';
 import { teamInfo } from '../data/teamInfo';
 
 import { Flex, Heading, UnorderedList, ListItem, Text } from '@chakra-ui/react';
-import { GridImg } from '../components/grid-img';
+import { GridImg } from '../components/grid-img2x3-flex';
 import { ButtonLink } from '../components/buttonLink';
 import { ContentContainerLarge } from '../components/content-container-large';
 
-export const TeamPage = () => {
+export const PraxisPage = () => {
   return (
     <>
       <HeroImage bgImage={BgImage}>
         <SloganOneBox text1={'Team'} />
       </HeroImage>
       <ContentContainer>
-        <Flex direction="column" wrap="column" justify="center" mb={10}>
+        <Flex direction="column" wrap="column" justify="center">
           <Heading as="h1" variant="large">
-            Willkommen in unserer Praxis!
+            {praxisInfo.basics[0].title2}
           </Heading>
-          <Text>
-            Lernen Sie unsere Praxis und unser Team kennen. Wir arbeiten in
-            modernen Räumlichkeiten, sind technisch super ausgestattet und
-            sorgen in einem motivierten und erstklassig ausgebildeten Team
-            dafür, dass Sie bei uns bestens versorgt sind.
-          </Text>
+          <Text>{praxisInfo.basics[0].text2}</Text>
         </Flex>
       </ContentContainer>
       <ContentContainerLarge>
@@ -69,7 +64,7 @@ export const TeamPage = () => {
           <Heading as="h2" variant="large">
             Unser Team
           </Heading>
-          <Text>{teamInfo.text}</Text>
+          <Text mb="2rem">{teamInfo.text}</Text>
           <Article data={data}>
             <Heading as="h4" variant="medium">
               Fortbildungen:

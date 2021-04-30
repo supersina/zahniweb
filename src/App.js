@@ -3,7 +3,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { HomePage } from './pages/home';
 import { KontaktPage } from './pages/kontakt';
 import { LeistungenPage } from './pages/leistungen';
-import { TeamPage } from './pages/team';
+import { PraxisPage } from './pages/praxis';
 import { Footer } from './components/footer';
 import { Navbar } from './components/navbar';
 import { extendedTheme } from './theme/theme';
@@ -14,7 +14,7 @@ function App() {
       return <LeistungenPage />;
     }
     if (window.location.pathname === '/praxis') {
-      return <TeamPage />;
+      return <PraxisPage />;
     }
     if (window.location.pathname === '/kontakt') {
       return <KontaktPage />;

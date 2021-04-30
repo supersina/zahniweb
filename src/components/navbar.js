@@ -28,14 +28,16 @@ export const Navbar = () => {
         bg={`linear-gradient(to bottom, ${colors.mainColorTransp} 00%, ${colors.mainColorTransp} 100%)`}
       >
         <Box>
-          <Image
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0OvkcWyOmd3paozcdWY9aO7dz2ARXs1EuMg&usqp=CAU"
-            //height="50px"
-            alt="Logo"
-            m={2}
-            borderRadius="full"
-            boxSize="50px"
-          ></Image>
+          <Link href="/home">
+            <Image
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0OvkcWyOmd3paozcdWY9aO7dz2ARXs1EuMg&usqp=CAU"
+              //height="50px"
+              alt="Logo"
+              m={2}
+              borderRadius="full"
+              boxSize="50px"
+            ></Image>
+          </Link>
         </Box>
         <Flex direction="row" justify-content="flex-end" mr={10}>
           <List>

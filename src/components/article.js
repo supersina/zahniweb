@@ -2,19 +2,28 @@ import React from 'react';
 import { Box, Flex, Heading, Image, Text } from '@chakra-ui/react';
 import { colors } from '../theme/colors';
 
-export const Article = ({ data, transform, children, ...props }) => {
+export const Article = ({
+  data,
+  reverseRow,
+  transform,
+  children,
+  ...props
+}) => {
   return (
     <>
       {data.map((entry, index) => {
-        //const isRowReverse = index % 2 !== 0;
+        const isRowReverse = index % 2 !== 0;
         return (
           <Box marginBottom="2rem" key={index}>
-            <Heading as="h2" variant="large">
-              {entry.title}
-            </Heading>
             <Flex
-              //direction={isRowReverse ? 'row-reverse' : 'row'}
-              direction="row"
+              direction={
+                reverseRow
+                  ? 'row-reverse'
+                  : isRowReverse
+                  ? 'row-reverse'
+                  : 'row'
+              }
+              //direction="row"
               justifyContent={{
                 xs: 'center',
                 sm: 'center',
@@ -49,7 +58,7 @@ export const Article = ({ data, transform, children, ...props }) => {
                   //border="0.5rem solid"
                   //borderRadius="3rem 3rem 3rem 3rem"
                   borderColor={colors.mainColor}
-                  boxShadow="rgba(49, 130, 206, 0.5) 1px 1px 15px 5px"
+                  boxShadow={`${colors.bgColor} 1px 1px 15px 5px`} //</Box>rgba(49, 130, 206, 0.5) 1px 1px 15px 5px"
                   margin="auto"
                 ></Image>
               </Box>
@@ -63,11 +72,13 @@ export const Article = ({ data, transform, children, ...props }) => {
                 }}
                 p={{ base: '2', sm: '2', md: '4', lg: '6' }}
               >
-                <Box>
+                <Flex height="100%" direction="column" justify="center">
+                  <Heading as="h2" variant="large" marginTop="0px">
+                    {entry.title}
+                  </Heading>
                   <Text>{entry.text}</Text>
-                </Box>
-
-                {children}
+                  {children}
+                </Flex>
               </Box>
             </Flex>
           </Box>

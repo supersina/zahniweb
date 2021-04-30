@@ -5,6 +5,5 @@ export const colors = {
   secColorTransp: '#202D4999',
   bgColor: '#9E8BC8',
   buttonColor: '#C6AF54',
-  textColor: 'black',
   headingColor: '#25292B',
 };

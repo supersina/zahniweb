@@ -5,9 +5,12 @@ export const praxisInfo = {
       id: 1,
       name: 'Praxis',
       title: 'Unsere Praxis',
-      image: 'images/team/roxi.jpg',
+      image: 'images/praxis/wartezimmer.jpg',
       text:
         'Gelegen in einer ruhigen Seitenstraße der schönsten Stadt der Welt erstreckt sich unsere moderne Praxis über 150 qm. Unser eingespieltes Empfangsteam begrüßt Sie und sorgt für schnelle und reibungslose Abläufe. Ihre Behandlung findet in einem von zwei Räumen statt. Dr. Roxi und Dr. X arbeiten mit neusten Equipment auf dem neuesten Stand der Technik. Damit sind Sie bei uns immer bestens versorgt.',
+      title2: 'Lernen Sie uns kennen!',
+      text2:
+        'Gerne möchten wir Ihnen unser Team und unsere Praxis vorstellen. Wir arbeiten in modernen Räumlichkeiten, sind technisch super ausgestattet und sorgen in einem motivierten und erstklassig ausgebildeten Team dafür, dass Sie bei uns bestens versorgt sind.',
     },
   ],
   description: [

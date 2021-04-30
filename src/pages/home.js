@@ -9,10 +9,13 @@ import { Sprechzeiten } from '../components/sprechzeiten-block';
 import { ItemCarousel } from '../components/item-carousel';
 import { HeroImage } from '../components/hero-image';
 import { ContentContainer } from '../components/content-container';
-import { praxisInfo } from '../data/praxisInfo';
 import { Article } from '../components/article';
+
+import { praxisInfo } from '../data/praxisInfo';
+import { leistungenInfo } from '../data/leistungenInfo';
+import { kundenInfo } from '../data/kundenInfo';
+
 import { colors } from '../theme/colors';
-//import { Text } from '../components/custom-text';
 
 export const HomePage = () => {
   return (
@@ -55,12 +58,17 @@ export const HomePage = () => {
             bg={colors.secColor}
           >
             <Sprechzeiten color="white"></Sprechzeiten>
-            <Flex direction="column">
+            <Flex direction="column" align="center">
               <ButtonLink
                 title={'Online Termin'}
                 link={'https://doctolib.de'}
+                width="140px"
               ></ButtonLink>
-              <ButtonLink title={'Kontakt'} link={'/kontakt'}></ButtonLink>
+              <ButtonLink
+                title={'Kontakt'}
+                link={'/kontakt'}
+                width="140px"
+              ></ButtonLink>
             </Flex>
           </Flex>
         </Flex>
@@ -74,19 +82,23 @@ export const HomePage = () => {
       {/* Leistungen */}
 
       <ContentContainer>
-        <Article data={praxisInfo.basics}></Article>
+        <Article data={praxisInfo.basics}>
+          {' '}
+          <ButtonLink title={'mehr'} link={'/praxis'}></ButtonLink>
+        </Article>
+        <Article data={leistungenInfo.basics} reverseRow="row-reverse">
+          <ButtonLink title={'mehr'} link={'/leistungen'}></ButtonLink>
+        </Article>
         <Box mt={10}>
           <Heading as="h2" variant="large" width="fit-content">
-            Unsere Leistungen
+            {kundenInfo.basics[0].title}
           </Heading>
-          <Text>
-            Wir bieten Ihnen alle gängigen Behandlungen an. Prophylaxe,
-            Zahnersatz, Pi, Pa, Po. Machen wir alles. Besonders spezialisiert
-            sind wir auf Zahnersatz. Hier arbeiten wir nur mit den besten
-            Materialien.
-          </Text>
+          <Text> {kundenInfo.basics[0].text}</Text>
           <Box w="100%" marginX="auto" mt={5} mb={10}>
-            <ItemCarousel />
+            <ItemCarousel
+              data={kundenInfo.description}
+              maxItemsToShow={3}
+            ></ItemCarousel>
           </Box>
         </Box>
       </ContentContainer>
