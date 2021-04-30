@@ -93,7 +93,6 @@ export const ItemCarousel = ({ data, maxItemsToShow, children }) => {
           );
         })}
       </Carousel>
-      ;
     </>
   );
 };

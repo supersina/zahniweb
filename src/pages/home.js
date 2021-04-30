@@ -17,6 +17,8 @@ import { kundenInfo } from '../data/kundenInfo';
 
 import { colors } from '../theme/colors';
 
+const actTime = new Date().toLocaleString();
+
 export const HomePage = () => {
   return (
     <>
@@ -44,6 +46,12 @@ export const HomePage = () => {
           <Text marginTop="0.5rem">
             Kontaktieren Sie uns oder vereinbaren Sie direkt einen Termin.
           </Text>
+
+          <Box width="fit-content" bg={colors.buttonColor} mt="2.5rem">
+            <Heading as="text" color="green.700" variant="small">
+              {actTime} - Wir haben gerade geöffnet!
+            </Heading>
+          </Box>
           <Flex
             //flex-flow="row wrap"
             //align="center"
@@ -52,7 +60,6 @@ export const HomePage = () => {
             justify="space-around"
             wrap="wrap"
             align="center"
-            mt="2rem"
             pr="2rem"
             pl="2rem"
             bg={colors.secColor}
