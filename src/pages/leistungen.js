@@ -5,6 +5,8 @@ import { SloganOneBox } from '../components/slogan-one-box';
 import { HeroImage } from '../components/hero-image';
 import { ContentContainer } from '../components/content-container';
 import { leistungenInfo } from '../data/leistungenInfo';
+import { leistungenDetails } from '../data/leistungenInfo';
+
 import { GridImgSimple } from '../components/grid-img-simple';
 
 export const LeistungenPage = () => {
@@ -16,13 +18,17 @@ export const LeistungenPage = () => {
       <ContentContainer>
         <Flex direction="column" wrap="column" justify="center">
           <Heading as="h1" variant="large">
-            {leistungenInfo.basics[0].title}
+            {leistungenInfo.title}
           </Heading>
-          <Text>{leistungenInfo.basics[0].text2}</Text>
+          <Text>{leistungenInfo.text2}</Text>
         </Flex>
       </ContentContainer>
       <ContentContainer>
-        <GridImgSimple data={leistungenInfo.leistung}></GridImgSimple>
+        <GridImgSimple
+          data={leistungenDetails}
+          minChildWidth="200px"
+          boxHeight="200px"
+        ></GridImgSimple>
       </ContentContainer>
     </>
   );

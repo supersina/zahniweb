@@ -26,14 +26,26 @@ export const praxisInfo = {
     },
   ],
   images: [
-    { id: 1, image: 'images/team/x.jpg' },
-    { id: 2, image: 'img_leistungen/kronen.jpg' },
-    { id: 3, image: 'images/praxis/stern-frauen.jpg' },
-    { id: 4, image: 'images/praxis/leistungen.jpg' },
-    { id: 5, image: 'images/praxis/wartezimmer.jpg' },
-    { id: 6, image: 'images/team/x.jpg' },
-    { id: 7, image: 'images/team/x.jpg' },
-    { id: 8, image: 'images/team/x.jpg' },
+    { id: 1, title: 'so sieht einer von uns aus', image: 'images/team/x.jpg' },
+    { id: 2, title: 'sowas machen wir', image: 'img_leistungen/kronen.jpg' },
+    {
+      id: 3,
+      title: 'das sind wir alle',
+      image: 'images/praxis/stern-frauen.jpg',
+    },
+    {
+      id: 4,
+      title: 'wir sind richtig stark',
+      image: 'images/praxis/leistungen.jpg',
+    },
+    {
+      id: 5,
+      title: 'unser Wartezimmer',
+      image: 'images/praxis/wartezimmer.jpg',
+    },
+    { id: 6, title: 'noch jemand von uns', image: 'images/team/x.jpg' },
+    { id: 7, title: 'und noch jemand von uns', image: 'images/team/x.jpg' },
+    { id: 8, title: 'und und noch jemand', image: 'images/team/x.jpg' },
   ],
   cooperation: [
     {

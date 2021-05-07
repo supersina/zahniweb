@@ -1,8 +1,9 @@
 import React from 'react';
-import { Box, Flex, Heading, Image, SimpleGrid, Text } from '@chakra-ui/react';
+import { Box, Flex, Heading, Image, SimpleGrid } from '@chakra-ui/react';
 import { colors } from '../theme/colors';
 
-export const GridImgSimple = ({ data, children, ...props }) => {
+export const GridImgSimple = ({ data, boxHeight, children, ...props }) => {
+  console.log('prophy daten', data);
   return (
     <>
       <Box marginBottom="2rem">
@@ -14,14 +15,15 @@ export const GridImgSimple = ({ data, children, ...props }) => {
         >
           {data.map(leistung => {
             return (
-              <Box height="200px">
-                <Box
-                  height="80%"
-                  backgroundImage={`url("${leistung.image}")`}
-                  backgroundPosition="center"
-                  backgroundRepeat="no-repeat"
-                  backgroundSize="cover"
-                >
+              <Box
+                height={boxHeight} //"200px"
+                key={leistung.id}
+                _hover={{ cursor: 'pointer' }}
+                onClick={() =>
+                  (window.location = `/leistungen/${leistung.name}`)
+                }
+              >
+                <Box height="80%">
                   <Image
                     src={leistung.image}
                     alt="gridimg"
@@ -39,7 +41,7 @@ export const GridImgSimple = ({ data, children, ...props }) => {
                     w="100%"
                     height="100%"
                   >
-                    <Box>
+                    <Flex direction="row" justifyContent="space-around">
                       <Heading
                         as="h4"
                         variant="small"
@@ -49,9 +51,13 @@ export const GridImgSimple = ({ data, children, ...props }) => {
                       >
                         {leistung.title}
                       </Heading>
-
+                      {/* <ButtonLink
+                        size="xs"
+                        title="mehr"
+                        link={`/leistungen/${leistung.name}`}
+                      ></ButtonLink> */}
                       {children}
-                    </Box>
+                    </Flex>
                   </Flex>
                 </Box>
               </Box>

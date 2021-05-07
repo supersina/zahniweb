@@ -9,6 +9,7 @@ export const Article = ({
   children,
   ...props
 }) => {
+  console.log(data);
   return (
     <>
       {data.map((entry, index) => {

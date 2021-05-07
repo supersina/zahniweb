@@ -42,7 +42,17 @@ export const PraxisPage = () => {
           <Heading as="h2" variant="medium">
             Die Praxis in Bildern
           </Heading>
-          <GridImg data={praxisInfo.images}></GridImg>
+          <GridImg
+            data={[
+              praxisInfo.images[0],
+              praxisInfo.images[1],
+              praxisInfo.images[2],
+              praxisInfo.images[3],
+              praxisInfo.images[4],
+            ]}
+            rowSpan={[1, 1, 1, 1, 1]}
+            colSpan={[2, 2, 2, 2, 4]}
+          ></GridImg>
           {/* </Box> */}
         </ContentContainer>
       </ContentContainerLarge>

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, Flex, Heading, Text } from '@chakra-ui/react';
+import { ArrowForwardIcon } from '@chakra-ui/icons';
 
 import BgImage from '../images/bg-haus.png';
 import { SloganTwoBoxes } from '../components/slogan-two-boxes';
@@ -16,10 +17,39 @@ import { leistungenInfo } from '../data/leistungenInfo';
 import { kundenInfo } from '../data/kundenInfo';
 
 import { colors } from '../theme/colors';
+import { Clock } from '../components/clock';
 
-const actTime = new Date().toLocaleString();
+const hours = [
+  { day: 'sunday', opening: 'closed', closing: 'closed' },
+  { day: 'monday', opening: 9, closing: 19 },
+  { day: 'tuesday', opening: 9, closing: 18 },
+  { day: 'wednesday', opening: 9, closing: 15 },
+  { day: 'thursday', opening: 9, closing: 15 },
+  { day: 'friday', opening: 9, closing: 15 },
+  { day: 'saturday', opening: 'closed', closing: 'closed' },
+];
 
 export const HomePage = () => {
+  const date = new Date();
+  const day = date.getDay();
+  const time = date.getHours();
+
+  let calcIsOpen = false;
+  if (day > 0 && day < 6) {
+    if (time > hours[day].opening && time < hours[day].closing) {
+      calcIsOpen = true;
+    }
+  }
+
+  const [isOpen] = useState(calcIsOpen);
+
+  /* useEffect(() => {
+    setInterval() => {}
+    return () => {
+      cleanup //removeInterval
+    }
+  }, []) */
+
   return (
     <>
       {/* Background Image */}
@@ -48,9 +78,18 @@ export const HomePage = () => {
           </Text>
 
           <Box width="fit-content" bg={colors.buttonColor} mt="2.5rem">
-            <Heading as="text" color="green.700" variant="small">
-              {actTime} - Wir haben gerade geöffnet!
-            </Heading>
+            <Clock>
+              <ArrowForwardIcon></ArrowForwardIcon>{' '}
+              <Heading
+                as="p"
+                color={isOpen ? 'green.700' : 'red.700'}
+                variant="small"
+                margin="0"
+                marginLeft="1rem"
+              >
+                Wir haben gerade {isOpen ? 'geöffnet!' : 'geschlossen!'}
+              </Heading>
+            </Clock>
           </Box>
           <Flex
             //flex-flow="row wrap"
@@ -93,7 +132,7 @@ export const HomePage = () => {
           {' '}
           <ButtonLink title={'mehr'} link={'/praxis'}></ButtonLink>
         </Article>
-        <Article data={leistungenInfo.basics} reverseRow="row-reverse">
+        <Article data={[leistungenInfo]} reverseRow="row-reverse">
           <ButtonLink title={'mehr'} link={'/leistungen'}></ButtonLink>
         </Article>
         <Box mt={10}>

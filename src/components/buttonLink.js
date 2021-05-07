@@ -3,6 +3,7 @@ import { Button, Link, Text } from '@chakra-ui/react';
 import { colors } from '../theme/colors';
 
 export const ButtonLink = ({ title, link, ...props }) => {
+  console.log(link);
   return (
     <>
       <Button

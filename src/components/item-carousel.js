@@ -5,7 +5,6 @@ import { Box, Flex, Heading, Text } from '@chakra-ui/react';
 import { colors } from '../theme/colors';
 
 export const ItemCarousel = ({ data, maxItemsToShow, children }) => {
-  console.log(maxItemsToShow);
   const breakPoints = [
     { width: 1, itemsToShow: 1, itemsToScroll: 1 },
     { width: 320, itemsToShow: 2, itemsToScroll: 1 },
@@ -62,7 +61,7 @@ export const ItemCarousel = ({ data, maxItemsToShow, children }) => {
                       ml="1rem"
                       color="white"
                       variant="xsmall"
-                      noOfLines={{ xs: 3, sm: 4, md: 5, lg: 5, xl: 5 }}
+                      noOfLines={{ xs: 3, sm: 4, md: 4, lg: 4, xl: 4 }}
                     >
                       {item.description}
                     </Text>
