@@ -17,7 +17,7 @@ export const PraxisPage = () => {
   return (
     <>
       <HeroImage bgImage={BgImage}>
-        <SloganOneBox text1={'Team'} />
+        <SloganOneBox text1={'Praxis'} />
       </HeroImage>
       <ContentContainer>
         <Flex direction="column" wrap="column" justify="center">
