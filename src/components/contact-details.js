@@ -14,19 +14,22 @@ import { colors } from '../theme/colors';
 export const ContactDetails = () => {
   return (
     <>
-      <Box maxW="100%" mb={4} mt={10}>
+      <Box maxW="100%" marginX="auto" mb={4} mt={10}>
         <Flex
           direction={{
             xs: 'column',
-            sm: 'column',
+            sm: 'row',
             md: 'row',
             lg: 'row',
             xl: 'row,',
           }}
           wrap="wrap"
-          alignItems="center"
+          alignItems={{
+            base: 'center',
+            sm: 'flex-start',
+            md: 'flex-start',
+          }}
           justifyContent="center"
-          marginX="auto"
         >
           <Flex direction="row" margin={2} align="flex-start">
             <Icon

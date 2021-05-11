@@ -33,8 +33,8 @@ export const Sprechzeiten = ({ ...props }) => {
             marginBottom="1rem"
             {...props}
           >
-            <Text variant="xsmall">9:00 - 15:00 Uhr</Text>
-            <Text variant="xsmall">9:00 - 15:00 Uhr</Text>
+            <Text variant="xsmall">9:00 - 18:00 Uhr</Text>
+            <Text variant="xsmall">9:00 - 16:00 Uhr</Text>
             <Text variant="xsmall">geschlossen</Text>
           </Flex>
         </Flex>
