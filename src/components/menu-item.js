@@ -1,5 +1,4 @@
 import { Link, Text } from '@chakra-ui/react';
-import { colors } from '../theme/colors';
 
 export const MenuItem = ({ children, link = '/', ...props }) => {
   return (
