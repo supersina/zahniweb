@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-import { colors } from '../theme/colors';
 import { Logo } from './logo';
 import { MenuToggle } from './menu-toggle';
 import { NavbarContainer } from './navbar-container';
