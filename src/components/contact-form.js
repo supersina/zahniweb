@@ -16,6 +16,12 @@ import { ButtonLink } from './buttonLink';
 
 const fontSize = { sm: 'sm', md: 'md', lg: 'md', xl: 'md' };
 
+const encode = data => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&');
+};
+
 export const ContactForm = () => {
   const [nameInput, setNameInput] = useState('');
   const [emailInput, setEmailInput] = useState('');
@@ -67,7 +73,7 @@ export const ContactForm = () => {
     setErrors(newErrors);
   };
 
-  const sendMessage = () => {
+  const sendMessage = e => {
     console.log(
       'Inputs: ',
       nameInput,
@@ -76,6 +82,7 @@ export const ContactForm = () => {
       textInput,
       agbInput
     );
+
     let newErrors = [];
 
     if (textInput === '') {
@@ -96,13 +103,30 @@ export const ContactForm = () => {
     setErrors(newErrors);
 
     if (newErrors.length === 0) {
-      setNameInput('');
-      setEmailInput('');
-      setTelephoneInput('');
-      setTextInput('');
-      setAgbInput(false);
-      setSent(true);
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode({
+          'form-name': 'contact',
+          nameInput,
+          emailInput,
+          telephoneInput,
+          textInput,
+          agbInput,
+        }),
+      })
+        .then(() => {
+          setNameInput('');
+          setEmailInput('');
+          setTelephoneInput('');
+          setTextInput('');
+          setAgbInput(false);
+          setSent(true);
+        })
+        .catch(error => alert(error));
     }
+
+    e.preventDefault();
   };
   console.log('Erroooors: ', errors);
   return (
@@ -130,6 +154,8 @@ export const ContactForm = () => {
         borderRadius="5px"
       >
         <Flex
+          as="form"
+          name="contact"
           direction="column"
           flexWrap="wrap"
           width="90%"
@@ -137,6 +163,7 @@ export const ContactForm = () => {
           justifyContent="center"
           mt={4}
           marginX="auto"
+          onSubmit={sendMessage}
         >
           <FormControl id="name" mt={4}>
             <FormLabel fontSize={fontSize}>Name</FormLabel>
@@ -194,7 +221,7 @@ export const ContactForm = () => {
             Datenschutz habe ich gelesen und stimme zu
           </Checkbox>
           {sent ? <AlertConfirmation></AlertConfirmation> : <Text></Text>}
-          <ButtonLink mb={4} title="Senden" onClick={sendMessage}></ButtonLink>
+          <ButtonLink type="submit" mb={4} title="Senden"></ButtonLink>
         </Flex>
       </Box>
     </>
