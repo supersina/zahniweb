@@ -27,7 +27,7 @@ export const GridImg = ({ data, rowSpan, colSpan, ...props }) => {
                 bg={colors.bgColor}
                 key={entry.id}
                 _hover={{ cursor: 'pointer' }}
-                onCLick={() => {}}
+                onClick={() => {}}
               >
                 <Image
                   src={entry.image}
@@ -44,7 +44,7 @@ export const GridImg = ({ data, rowSpan, colSpan, ...props }) => {
             colSpan={2}
             bg={colors.bgColor}
             _hover={{ cursor: 'pointer' }}
-            onCLick={() => {}}
+            onClick={() => {}}
           >
             <Image
               src={data[0].image}

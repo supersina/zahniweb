@@ -77,7 +77,11 @@ export const HomePage = () => {
             Kontaktieren Sie uns oder vereinbaren Sie direkt einen Termin.
           </Text>
 
-          <Box width="fit-content" bg={colors.buttonColor} mt="2.5rem">
+          <Box
+            width={['100%', '100%', '70%', '70%', '50%']}
+            bg={colors.buttonColor}
+            mt="2.5rem"
+          >
             <Clock>
               <ArrowForwardIcon></ArrowForwardIcon>{' '}
               <Heading
