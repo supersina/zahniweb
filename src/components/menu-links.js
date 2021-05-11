@@ -20,6 +20,7 @@ export const MenuLinks = ({ isOpen }) => {
           ]}
           direction={['column', 'column', 'row', 'row', 'row']}
           pt={[2, 2, 0, 0, 0]}
+          pb={[2, 2, 0, 0, 0]}
         >
           <MenuItem link="/">Home</MenuItem>
           <MenuItem link="/praxis">Unsere Praxis</MenuItem>

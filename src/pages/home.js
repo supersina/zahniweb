@@ -21,11 +21,11 @@ import { Clock } from '../components/clock';
 
 const hours = [
   { day: 'sunday', opening: 'closed', closing: 'closed' },
-  { day: 'monday', opening: 9, closing: 19 },
+  { day: 'monday', opening: 9, closing: 18 },
   { day: 'tuesday', opening: 9, closing: 18 },
-  { day: 'wednesday', opening: 9, closing: 15 },
-  { day: 'thursday', opening: 9, closing: 15 },
-  { day: 'friday', opening: 9, closing: 15 },
+  { day: 'wednesday', opening: 9, closing: 18 },
+  { day: 'thursday', opening: 9, closing: 16 },
+  { day: 'friday', opening: 9, closing: 16 },
   { day: 'saturday', opening: 'closed', closing: 'closed' },
 ];
 

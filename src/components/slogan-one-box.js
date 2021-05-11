@@ -1,27 +1,27 @@
 import React from 'react';
-import { Box, Heading } from '@chakra-ui/react';
+import { Flex, Heading } from '@chakra-ui/react';
 import { colors } from '../theme/colors';
 
 export const SloganOneBox = ({ text1, ...props }) => {
   return (
-    <Box position="absolute" align="right" top="10vh" right="10vw" {...props}>
-      <Box
-        bg={colors.mainColor}
-        height="fit-content"
-        width="fit-content"
-        mt="420px"
-      >
+    <Flex
+      height="100%"
+      width="100%"
+      justify="flex-end"
+      alignItems="flex-end"
+      padding={{ base: 8, md: 20 }}
+    >
+      <Flex height="fit-content" width="fit-content" {...props}>
         <Heading
           as="h1"
+          bg={colors.mainColor}
           variant="xlarge"
-          p="10px"
-          ml="50px"
-          mr="50px"
+          fontSize={{ base: '2rem', sm: '2.5rem', md: '3rem', xl: '3.5rem' }}
           color="white"
         >
           {text1}
         </Heading>
-      </Box>
-    </Box>
+      </Flex>
+    </Flex>
   );
 };
