@@ -103,7 +103,7 @@ export const ContactForm = () => {
     setErrors(newErrors);
 
     if (newErrors.length === 0) {
-      fetch('/kontakt', {
+      fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: encode({
@@ -156,7 +156,6 @@ export const ContactForm = () => {
       >
         <Flex
           as="form"
-          name="contact"
           direction="column"
           flexWrap="wrap"
           width="90%"
