@@ -103,7 +103,7 @@ export const ContactForm = () => {
     setErrors(newErrors);
 
     if (newErrors.length === 0) {
-      fetch('/', {
+      fetch('/kontakt', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: encode({
@@ -128,6 +128,7 @@ export const ContactForm = () => {
 
     e.preventDefault();
   };
+
   console.log('Erroooors: ', errors);
   return (
     <>
