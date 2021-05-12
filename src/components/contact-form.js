@@ -10,124 +10,93 @@ import {
   Flex,
   Textarea,
 } from '@chakra-ui/react';
-import { AlertConfirmation } from './alert-confirmation';
+import { useForm } from '@formspree/react';
+
 import { colors } from '../theme/colors';
 import { ButtonLink } from './buttonLink';
 
 const fontSize = { sm: 'sm', md: 'md', lg: 'md', xl: 'md' };
 
-const encode = data => {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&');
-};
-
 export const ContactForm = () => {
-  const [nameInput, setNameInput] = useState('');
-  const [emailInput, setEmailInput] = useState('');
-  const [telephoneInput, setTelephoneInput] = useState('');
-  const [textInput, setTextInput] = useState('');
-  const [agbInput, setAgbInput] = useState(false);
-  const [sent, setSent] = useState(false);
+  const [submitState, handleSubmit] = useForm('xoqyejke');
+  const [formState, setFormState] = useState({
+    name: '',
+    tel: '',
+    email: '',
+    text: '',
+    agb: false,
+  });
+
   const [errors, setErrors] = useState([]);
 
-  const handleNameChange = e => {
-    e.preventDefault();
-    const value = e.target.value;
-    setNameInput(value);
-
-    let newErrors = errors.filter(error => error !== 'nameInput');
-    setErrors(newErrors);
-  };
-
-  const handleEmailChange = e => {
-    e.preventDefault();
-    const value = e.target.value;
-    setEmailInput(value);
-
-    let newErrors = errors.filter(error => error !== 'emailInput');
-    setErrors(newErrors);
-  };
-
-  const handleTelephoneChange = e => {
-    e.preventDefault();
-    const value = e.target.value;
-    setTelephoneInput(value);
-  };
-
-  const handleTextChange = e => {
-    e.preventDefault();
-    const value = e.target.value;
-    setTextInput(value);
-
-    let newErrors = errors.filter(error => error !== 'textInput');
-    setErrors(newErrors);
-  };
-
-  const handleAgbInput = e => {
-    e.preventDefault();
-    const value = e.target.checked;
-    setAgbInput(value);
-
-    let newErrors = errors.filter(error => error !== 'agbInput');
-    setErrors(newErrors);
-  };
-
-  const sendMessage = e => {
-    console.log(
-      'Inputs: ',
-      nameInput,
-      emailInput,
-      telephoneInput,
-      textInput,
-      agbInput
-    );
-
-    let newErrors = [];
-
-    if (textInput === '') {
-      newErrors.push('textInput');
+  const validate = () => {
+    let isValid = true;
+    const errors = [];
+    if (formState.name.trim().length < 1) {
+      errors.push('name');
+      isValid = false;
     }
-    if (nameInput === '') {
-      newErrors.push('nameInput');
+    if (formState.text.trim().length < 3) {
+      errors.push('text');
+      isValid = false;
     }
-    if (emailInput === '') {
-      newErrors.push('emailInput');
-    }
-    if (agbInput === false) {
-      newErrors.push('agbInput');
+    let mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if (!formState.email.match(mailformat)) {
+      errors.push('email');
+      isValid = false;
     }
 
-    console.log('new errors: ', newErrors);
-    console.log('agb: ', agbInput);
-    setErrors(newErrors);
-
-    if (newErrors.length === 0) {
-      fetch('/index.html', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encode({
-          'form-name': 'contact',
-          nameInput,
-          emailInput,
-          telephoneInput,
-          textInput,
-          agbInput,
-        }),
-      })
-        .then(() => {
-          setNameInput('');
-          setEmailInput('');
-          setTelephoneInput('');
-          setTextInput('');
-          setAgbInput(false);
-          setSent(true);
-        })
-        .catch(error => alert(error));
+    let phoneformat1 = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+    let phoneformat2 = /^\(?(\d{4})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+    let phoneformat3 = /^\(?(\d{4})\)?[- ]?(\d{2})[- ]?(\d{3})[- ]?(\d{4})$/;
+    let phoneformat4 = /^\+?\(?(\d{2})\)?[- ]?(\d{2})[- ]?(\d{3})[- ]?(\d{4})$/;
+    let phoneformat5 = /^\+?\(?(\d{2})\)?[- ]?(\d{3})[- ]?(\d{3})[- ]?(\d{4})$/;
+    if (
+      !formState.tel.match(phoneformat1) &&
+      !formState.tel.match(phoneformat2) &&
+      !formState.tel.match(phoneformat3) &&
+      !formState.tel.match(phoneformat4) &&
+      !formState.tel.match(phoneformat5)
+    ) {
+      errors.push('tel');
+      isValid = false;
     }
 
-    e.preventDefault();
+    if (!formState.agb) {
+      errors.push('agb');
+      isValid = false;
+    }
+
+    setErrors(errors);
+    return isValid;
   };
+  const customHandleSubmit = e => {
+    e.preventDefault();
+    // custom validation
+    const isValid = validate();
+
+    console.log('isValid: ', isValid);
+    if (isValid) {
+      handleSubmit({
+        name: formState.name.trim(),
+        tel: formState.tel,
+        email: formState.email,
+        text: formState.text,
+        agb: formState.agb,
+      });
+      setFormState({
+        name: '',
+        tel: '',
+        email: '',
+        text: '',
+        agb: false,
+      });
+    }
+  };
+
+  if (submitState.succeeded) {
+    return <Text textAlign="center">Vielen Dank für Ihre Nachricht!</Text>;
+  }
 
   console.log('Erroooors: ', errors);
   return (
@@ -156,6 +125,7 @@ export const ContactForm = () => {
       >
         <Flex
           as="form"
+          onSubmit={customHandleSubmit}
           direction="column"
           flexWrap="wrap"
           width="90%"
@@ -163,43 +133,49 @@ export const ContactForm = () => {
           justifyContent="center"
           mt={4}
           marginX="auto"
-          onSubmit={sendMessage}
         >
           <FormControl id="name" mt={4}>
             <FormLabel fontSize={fontSize}>Name</FormLabel>
             <Input
               type="text"
+              name="name"
               bg={colors.bgColor}
               size="sm"
-              isInvalid={errors.includes('nameInput')}
-              value={nameInput}
-              onChange={handleNameChange}
+              onChange={e =>
+                setFormState({ ...formState, name: e.target.value })
+              }
+              isInvalid={errors.includes('name')}
             />
           </FormControl>
           <FormControl id="email" mt={2}>
             <FormLabel fontSize={fontSize}>Email</FormLabel>
             <Input
-              type="email"
+              type="text"
+              name="email"
               bg={colors.bgColor}
               size="sm"
-              isInvalid={errors.includes('emailInput')}
-              value={emailInput}
-              onChange={handleEmailChange}
+              onChange={e =>
+                setFormState({ ...formState, email: e.target.value })
+              }
+              isInvalid={errors.includes('email')}
             />
           </FormControl>
           <FormControl id="telephone" mt={2}>
             <FormLabel fontSize={fontSize}>Telefon</FormLabel>
             <Input
               type="tel"
+              name="tel"
               bg={colors.bgColor}
               size="sm"
-              isInvalid={errors.includes('telephoneInput')}
-              value={telephoneInput}
-              onChange={handleTelephoneChange}
+              onChange={e =>
+                setFormState({ ...formState, tel: e.target.value })
+              }
+              isInvalid={errors.includes('tel')}
             />
           </FormControl>
           <Textarea
             id="text"
+            name="text"
             placeholder="Beschreiben Sie hier Ihr Anliegen"
             mt={4}
             mb={4}
@@ -207,21 +183,26 @@ export const ContactForm = () => {
             bg={colors.bgColor}
             max={200}
             min={2}
-            isInvalid={errors.includes('textInput')}
-            value={textInput}
-            onChange={handleTextChange}
+            onChange={e => setFormState({ ...formState, text: e.target.value })}
+            isInvalid={errors.includes('text')}
           ></Textarea>
           <Checkbox
             size="sm"
+            name="agb"
             colorScheme="gray"
             mb={4}
-            isInvalid={errors.includes('agbInput')}
-            onChange={handleAgbInput}
+            isInvalid={errors.includes('agb')}
+            onChange={e => setFormState({ ...formState, agb: !formState.agb })}
           >
             Datenschutz habe ich gelesen und stimme zu
           </Checkbox>
-          {sent ? <AlertConfirmation></AlertConfirmation> : <Text></Text>}
-          <ButtonLink type="submit" mb={4} title="Senden"></ButtonLink>
+          {/*  {sent ? <AlertConfirmation></AlertConfirmation> : <Text></Text>} */}
+          <ButtonLink
+            type="submit"
+            disabled={submitState.submitting}
+            mb={4}
+            title="Senden"
+          />
         </Flex>
       </Box>
     </>
