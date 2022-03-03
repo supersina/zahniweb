@@ -1,5 +1,5 @@
 import React from 'react';
-import BgImage from '../images/stern-frauen.jpg';
+import BgImage from '../images/211-1600x500.jpg';
 import { SloganOneBox } from '../components/slogan-one-box';
 import { Article } from '../components/article';
 import { ContentContainer } from '../components/content-container';

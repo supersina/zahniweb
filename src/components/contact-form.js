@@ -18,7 +18,8 @@ import { ButtonLink } from './buttonLink';
 const fontSize = { sm: 'sm', md: 'md', lg: 'md', xl: 'md' };
 
 export const ContactForm = () => {
-  const [submitState, handleSubmit] = useForm('xoqyejke');
+  // Formspree endpoint here
+  const [submitState, handleSubmit] = useForm('abc');
   const [formState, setFormState] = useState({
     name: '',
     tel: '',
@@ -40,7 +41,8 @@ export const ContactForm = () => {
       errors.push('text');
       isValid = false;
     }
-    let mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    let mailformat =
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     if (!formState.email.match(mailformat)) {
       errors.push('email');
       isValid = false;
@@ -108,6 +110,10 @@ export const ContactForm = () => {
         <Text margin="auto">
           Schreiben Sie uns über unser Kontaktformular. Wir freuen uns von Ihnen
           zu hören!
+        </Text>
+        <Text margin="auto" color="red">
+          Achtung! Die Form ist zurzeit nicht aktiv. Deine Eingaben werden also
+          an niemanden gesendet.
         </Text>
       </Box>
 
@@ -196,7 +202,6 @@ export const ContactForm = () => {
           >
             Datenschutz habe ich gelesen und stimme zu
           </Checkbox>
-          {/*  {sent ? <AlertConfirmation></AlertConfirmation> : <Text></Text>} */}
           <ButtonLink
             type="submit"
             disabled={submitState.submitting}

@@ -15,16 +15,13 @@ export const Footer = () => {
         justify="space-evenly"
         wrap="wrap"
         w="100%"
-        //position="fixed"
         top="0"
-        //bg={`linear-gradient(rgba(300,300,300,0.3),rgba(300,300,300,0.3))`}
         bg={colors.mainColor}
       >
         <Sprechzeiten color="white" />
         <Box>
           <Image
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0OvkcWyOmd3paozcdWY9aO7dz2ARXs1EuMg&usqp=CAU"
-            //height="50px"
             alt="Logo"
             m={2}
             borderRadius="full"
@@ -33,7 +30,7 @@ export const Footer = () => {
         </Box>
 
         <Text variant="xsmall" color="white">
-          ©2021 Praxis Roxi | Designed with{' '}
+          ©2022 Praxis Roxi | Designed with{' '}
           <Icon
             as={IoMdFootball}
             w={6}

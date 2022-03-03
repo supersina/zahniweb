@@ -17,7 +17,7 @@ export const ContactDetails = () => {
       <Box maxW="100%" marginX="auto" mb={4} mt={10}>
         <Flex
           direction={{
-            xs: 'column',
+            xs: 'row',
             sm: 'row',
             md: 'row',
             lg: 'row',
@@ -25,7 +25,7 @@ export const ContactDetails = () => {
           }}
           wrap="wrap"
           alignItems={{
-            base: 'center',
+            base: 'flex-start',
             sm: 'flex-start',
             md: 'flex-start',
           }}
@@ -40,7 +40,7 @@ export const ContactDetails = () => {
               mr="0.1rem"
               marginTop="0.3rem"
             />
-            <Flex direction="column" mr="0.1rem">
+            <Flex direction="column" mr="0.2rem">
               <List>
                 <ListItem as="div">
                   <Heading as="h4" variant="small" color={colors.secColor}>
@@ -51,10 +51,10 @@ export const ContactDetails = () => {
                   <ListItem>
                     <Text variant="xsmall">Praxis Roxi</Text>
                   </ListItem>
-                  <Text variant="xsmall">Kreuznacher Str. 345</Text>
+                  <Text variant="xsmall">Zahnistr. 345</Text>
                 </ListItem>
                 <ListItem as="div">
-                  <Text variant="xsmall">10123 Berlin</Text>
+                  <Text variant="xsmall">11111 Berlin</Text>
                 </ListItem>
               </List>
             </Flex>
@@ -68,7 +68,7 @@ export const ContactDetails = () => {
               mr="0.1rem"
               marginTop="0.3rem"
             />
-            <Flex direction="column" mr="50px">
+            <Flex direction="column" mr="0.2rem">
               <List>
                 <ListItem as="div">
                   <Heading as="h4" variant="small" color={colors.secColor}>
@@ -76,10 +76,10 @@ export const ContactDetails = () => {
                   </Heading>
                 </ListItem>
                 <ListItem as="div">
-                  <Text variant="xsmall">https://www.roxis-praxis.de</Text>
+                  <Text variant="xsmall">roxis-praxis.netlify.app</Text>
                 </ListItem>
                 <ListItem as="div">
-                  <Text variant="xsmall">kontakt@roxis-praxis.de</Text>
+                  <Text variant="xsmall">nomailto@testtest.de</Text>
                 </ListItem>
               </List>
             </Flex>
@@ -93,7 +93,7 @@ export const ContactDetails = () => {
               mr="0.1rem"
               marginTop="0.3rem"
             />
-            <Flex direction="column" mr="50px">
+            <Flex direction="column" mr="0.2rem">
               <List>
                 <ListItem as="div">
                   <Heading as="h4" variant="small" color={colors.secColor}>
@@ -101,10 +101,10 @@ export const ContactDetails = () => {
                   </Heading>
                 </ListItem>
                 <ListItem as="div">
-                  <Text variant="xsmall">+49(0)172 123 456</Text>
+                  <Text variant="xsmall">+49(0)123 123 456</Text>
                 </ListItem>
                 <ListItem as="div">
-                  <Text variant="xsmall">Fax: 0172 123 456</Text>
+                  <Text variant="xsmall">Fax: 0123 123 456</Text>
                 </ListItem>
               </List>
             </Flex>
