@@ -6,7 +6,6 @@ import BgImage from '../images/bg-haus.png';
 import { SloganTwoBoxes } from '../components/slogan-two-boxes';
 import { ButtonLink } from '../components/buttonLink';
 import { Sprechzeiten } from '../components/sprechzeiten-block';
-//import { ContactDetails } from '../components/contact-details';
 import { ItemCarousel } from '../components/item-carousel';
 import { HeroImage } from '../components/hero-image';
 import { ContentContainer } from '../components/content-container';
@@ -43,13 +42,6 @@ export const HomePage = () => {
 
   const [isOpen] = useState(calcIsOpen);
 
-  /* useEffect(() => {
-    setInterval() => {}
-    return () => {
-      cleanup //removeInterval
-    }
-  }, []) */
-
   return (
     <>
       {/* Background Image */}
@@ -64,7 +56,7 @@ export const HomePage = () => {
       <ContentContainer>
         <Flex direction="column" justify="center" mb={10}>
           <Heading as="h1" variant="large">
-            Herzlich Willkommen in der Praxis Nowak!
+            Herzlich Willkommen in der Praxis Roxi!
           </Heading>
           <Text>
             In einer modernen Berliner Praxis sorgt unser Team aus zwei
@@ -75,6 +67,10 @@ export const HomePage = () => {
           </Text>
           <Text marginTop="0.5rem">
             Kontaktieren Sie uns oder vereinbaren Sie direkt einen Termin.
+          </Text>
+          <Text marginTop="0.5rem" color="red">
+            Achtung! Diese Website ist ein Übungsprojekt. Die Praxis existiert
+            nicht.
           </Text>
 
           <Box

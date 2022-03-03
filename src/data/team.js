@@ -4,8 +4,7 @@ export const teamDr = [
     name: 'Roxi',
     title: 'Dr. Roxi',
     image: 'images/team/roxi.jpg',
-    text:
-      'Roxi ist hier die Chefin. Sie ist eine geübte Ärztin, die sich für Ihre Patient*Innen ins Zeug legt. Sie hat ganz viel Erfahrung gesammelt und schon hier und dort gearbeitet. Sie ist Mitglied im Deutschen Zahnarztbund und setzt sich für gesunde Zähne für alle ein. ',
+    text: 'Roxi ist hier die Chefin. Sie ist eine geübte Ärztin, die sich für Ihre Patient*Innen ins Zeug legt. Sie hat ganz viel Erfahrung gesammelt und schon hier und dort gearbeitet. Sie ist Mitglied im Deutschen Zahnarztbund und setzt sich für gesunde Zähne für alle ein. ',
     schwerpunkte: [
       {
         id: 1,
@@ -63,8 +62,7 @@ export const teamDr = [
     name: 'X',
     title: 'Dr. X',
     image: 'images/team/x.jpg',
-    text:
-      'X ist seit 10 Jahren Zahnärztin. Sie widmet sich besonders gerne den ganz alten und jungen Patient*Innen. Sie hat schon hier und dort gearbeitet und freut sich, mit Dr. Roxi in einem Team arbeiten zu dürfen. Von Profis lernt man eben am besten. ',
+    text: 'X ist seit 10 Jahren Zahnärztin. Sie widmet sich besonders gerne den ganz alten und jungen Patient*Innen. Sie hat schon hier und dort gearbeitet und freut sich, mit Dr. Roxi in einem Team arbeiten zu dürfen. Von Profis lernt man eben am besten. ',
     schwerpunkte: [
       {
         id: 1,
