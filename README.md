@@ -17,4 +17,4 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ## Contact Form
 
-The contact form is built with Formspree. You need to have a Formspree account to receive emails sent by the contact form. You can learn more about using Formspree with React in the [Formspree documentation] (https://help.formspree.io/hc/en-us/articles/360055613373-The-Formspree-React-library)
+The contact form is built with Formspree. You need to have a Formspree account to receive emails sent by the contact form. You can learn more about using Formspree with React in the [Formspree documentation](https://help.formspree.io/hc/en-us/articles/360055613373-The-Formspree-React-library)
