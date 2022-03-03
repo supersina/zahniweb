@@ -49,7 +49,7 @@ export const praxisInfo = {
       title: 'Unser Kooperationspartner',
       image: 'images/team/x.jpg',
       text: 'Um Ihnen besten Service zu bieten, arbeiten wir mit dem Dentallabor DentaSchick zusammen. Es liegt gegenüber unserer Praxis und wird geführt von Herrn Müller. Herr Müller und sein Team sind bekannt für Ihre Qualitätsarbeit. Ihr Zahnersatz ist ein Unikat, das perfekt zu Ihnen passen muss. Hier wird es in Handarbeit mit größter Hingabe gefertigt.',
-      link: 'https://www.das-zahnlabor.com/',
+      link: 'https://www.google.com/',
     },
   ],
 };

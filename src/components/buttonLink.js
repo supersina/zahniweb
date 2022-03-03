@@ -12,10 +12,7 @@ export const ButtonLink = ({ title, link, ...props }) => {
         color="white"
         //borderColor="rgb(150,200,150)"
         _hover={{ bg: colors.mainColor }}
-        _focus={{
-          boxShadow:
-            '0 0 1px 2px rgba(150,200,150), 0 1px 1px rgba(150,200,150, .15)',
-        }}
+        _focus={{}}
         size="lg"
         width="fit-content"
         //padding="1.5rem"
@@ -23,7 +20,7 @@ export const ButtonLink = ({ title, link, ...props }) => {
         marginBottom="0.5rem"
         {...props}
       >
-        <Link href={link} style={{ textDecoration: 'none' }}>
+        <Link href={link} _hover={{}} _focus={{}}>
           <Text variant="small">{title}</Text>
         </Link>
       </Button>
